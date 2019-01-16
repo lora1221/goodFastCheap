@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Fast Cheap</title>
+</head>
+<body>
+<form id="game" name="game" onchange="chooseOption()">
+    <div class="Good">
+        <label>
+            <input id="good" type="checkbox" onclick="chooseOption('good')">
+            GOOD
+        </label>
+    </div>
+
+    <div class="Fast">
+        <label>
+            <input id="fast" type="checkbox" onclick="chooseOption('fast')">
+            FAST
+        </label>
+    </div>
+
+    <div class="Cheap">
+        <label>
+            <input id="cheap" type="checkbox" onclick="chooseOption('cheap')">
+            CHEAP
+        </label>
+    </div>
+    <script>
+        function chooseOption(idName){
+            objG = document.getElementById("good");
+            objF = document.getElementById("fast");
+            objC = document.getElementById("cheap");
+            switch(idName){
+                case "good":
+                    if (objG.checked) {
+                        if (objF.checked) {
+                            if (objC.checked) {
+                                objF.checked = false;
+                            }
+                        }
+                    }
+                    break;
+                case "fast":
+                    if (objF.checked) {
+                        if (objG.checked) {
+                            if (objC.checked) {
+                                objG.checked = false;
+                            }
+                        }
+                    }
+                    break;
+                case "cheap":
+                    if (objC.checked) {
+                        if (objF.checked) {
+                            if (objG.checked){
+                                objF.checked = false;
+                            }
+                        }
+                    }
+                    break;
+
+            }
+        }
+    </script>
+</form>
+
+</body>
+</html>
